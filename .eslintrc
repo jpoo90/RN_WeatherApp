@@ -25,16 +25,17 @@
         "node": true,
         "browser": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "parser": "babel-eslint",
     "ecmaFeatures": {
         "jsx": true,
         "experimentalObjectRestSpread": true,
         "modules": true
     },
     "plugins": [
+      'react'
     ],
     "globals": {
-      "angular": true,
       "module": true,
       "require": true,
       "__filename": false,

@@ -1,8 +1,6 @@
 'use strict';
 
-import React from 'react-native';
-
-import {
+import React, {
   Component,
   StyleSheet,
   View,
@@ -11,17 +9,17 @@ import {
   TextInput
 } from 'react-native';
 
-import Forecast from './Forecast'
+import Forecast from './Forecast';
 
 class WeatherApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      zip: '08999',
+      zip: '',
       forecast: {
-        main: 'Clouds',
-        description: 'few clouds',
-        temp: 45.7
+        main: '',
+        description: '',
+        temp: ''
       }
     };
   }
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
   },
   zipCode: {
     width: 50,
-    height: baseFontSize,
+    height: baseFontSize
   },
   mainText: {
     flex: 1,
