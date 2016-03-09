@@ -16,17 +16,23 @@ class WeatherApp extends Component {
     super(props);
     this.state = {
       zip: '',
-      forecast: {
-        main: '',
-        description: '',
-        temp: ''
-      }
+      forecast: null
     };
   }
 
   render() {
-    const {main, description, temp} = this.state.forecast;
 
+    let renderForecast = null;
+
+    if(this.state.forecast !== null) {
+      const {main, description, temp} = this.state.forecast;
+
+      renderForecast = <Forecast
+        main={main}
+        description={description}
+        temp={temp}
+      ></Forecast>;
+    }
     return (
       <View style={styles.container}>
         <Image
@@ -47,11 +53,7 @@ class WeatherApp extends Component {
                   ></TextInput>
               </View>
             </View>
-            <Forecast
-              main={main}
-              description={description}
-              temp={temp}
-            ></Forecast>
+            {renderForecast}
           </View>
         </Image>
       </View>
